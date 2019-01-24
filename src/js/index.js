@@ -1,6 +1,5 @@
 /* Here goes your JS code */
 
-
 document.addEventListener('DOMContentLoaded', (event)=>{
 
     const btnMain = document.querySelector('.btn-main');
@@ -13,9 +12,6 @@ document.addEventListener('DOMContentLoaded', (event)=>{
     const checkbox = form.querySelector('.checkbox-tick');
     const label = form.querySelector('.label');
 
-    
-    
-    
     function hideButton() {
     
         btnMain.classList.add('hide');
@@ -56,7 +52,6 @@ document.addEventListener('DOMContentLoaded', (event)=>{
     
             label.classList.add('valid');
             label.classList.remove('invalid');
-    
         }
     
     });
@@ -76,7 +71,7 @@ document.addEventListener('DOMContentLoaded', (event)=>{
     }
     
     
-    formWrapper.addEventListener('click', function(e) {
+    formWrapper.addEventListener('click', (e) => {
     
         let input = e.target;
     
@@ -126,7 +121,7 @@ document.addEventListener('DOMContentLoaded', (event)=>{
     });
     
     
-    form.addEventListener('submit', function(e){
+    form.addEventListener('submit', (e) =>{
     
     e.preventDefault();
     
@@ -162,8 +157,26 @@ document.addEventListener('DOMContentLoaded', (event)=>{
         }
     
         else {
+
+             //Ajax part to check on server side and submit form, then when done, return: 
     
-           form.submit(); 
+            setTimeout(function(){
+
+                pop.classList.remove('opacity');
+                btnMain.innerHTML="Thank you";
+                btnMain.classList.remove('hide');
+                btnMain.removeEventListener('click', hideButton);
+                btnMain.addEventListener('click', function(){
+                document.location.reload();
+                });
+                
+              },2500);
+    
+            setTimeout(function(){
+
+            pop.remove();
+
+            },3000);  
         }
     
     });

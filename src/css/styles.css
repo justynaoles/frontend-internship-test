@@ -1,0 +1,144 @@
+/* Here goes your CSS */
+/* Main styles */
+html,
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0; }
+
+.main {
+  background: linear-gradient(-45deg, #fcaf32 0%, #fc888e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; }
+
+.btn-main {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-family: 'Lobster', cursive;
+  font-size: 42px;
+  height: 60px;
+  outline: none;
+  padding: 0 20px;
+  transition: all .5s ease; }
+  .btn-main:hover {
+    transform: scale(1.15); }
+
+* {
+  margin: 0;
+  box-sizing: border-box; }
+
+.popup {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s; }
+
+.show {
+  display: block; }
+
+.opacity {
+  opacity: 1; }
+
+.hide {
+  display: none; }
+
+.form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 300px;
+  border-radius: 10px;
+  background-color: #ffffff; }
+  .form input {
+    width: 100%;
+    padding: 10px;
+    box-shadow: none;
+    margin-top: 15px;
+    background-color: #ffffff; }
+  .form .form-input {
+    border: 1px solid #b2b2b2; }
+  .form .valid {
+    border: 1px solid #82b74b; }
+  .form .invalid {
+    border: 1px solid #c94c4c; }
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+  position: relative; }
+
+.btn-close {
+  display: block;
+  box-shadow: none;
+  background-color: transparent;
+  border: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  padding: 0px; }
+
+.form-title {
+  text-align: center;
+  font-weight: 900;
+  font-size: 22px; }
+
+.label {
+  display: flex;
+  padding: 10px 0;
+  position: relative;
+  margin-top: 5px;
+  border: 1px solid transparent; }
+  .label .checkbox-tick {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 18px;
+    width: 18px; }
+  .label .checkmark {
+    position: absolute;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #b2b2b2;
+    cursor: pointer; }
+  .label .checkmark-text {
+    padding-left: 25px;
+    font-size: 14px; }
+  .label .checkbox-tick:after,
+  .label .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none; }
+  .label input:checked ~ .checkmark:after,
+  .label input:checked ~ .checbox-tick:after {
+    display: block; }
+  .label .checkmark:after {
+    width: 6px;
+    height: 9px;
+    border: solid #111111;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    left: 5px; }
+
+.submit {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  background-color: #111111;
+  color: #ffffff;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 20px; }
+  .submit:hover {
+    background-color: pink; }

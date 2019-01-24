@@ -1,2 +1,148 @@
 /* Here goes your CSS */
+
 @import 'layout/main';
+@import './variables.scss';
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+//popup style
+.popup {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.show {
+    display: block;
+}
+
+.opacity {
+    opacity: 1;
+}
+
+.hide {
+    display: none;
+}
+
+//login pop up style
+.form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 300px;
+    border-radius: 10px;
+    background-color: $white;
+    input {
+        width: 100%;
+        padding: 10px;
+        box-shadow: none;
+        margin-top: 15px;
+        background-color: $white;
+    }
+    .form-input {
+        border: 1px solid $grey;
+    }
+    .valid {
+        border: 1px solid $green;
+    }
+    .invalid {
+        border: 1px solid $red;
+    }
+   
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 35px;
+    position: relative;
+}
+
+//close button
+.btn-close {
+    display: block;
+    box-shadow: none;
+    background-color: transparent;
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    padding: 0px;
+}
+
+.form-title {
+    
+    text-align: center;
+    font-weight: 900;
+    font-size: 22px;
+
+}
+
+//checkbox style
+.label {
+    display: flex;
+    padding: 10px 0;
+    position: relative;
+    margin-top: 5px;
+    border: 1px solid transparent;
+    .checkbox-tick {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 18px;
+        width: 18px;
+    }
+    .checkmark {
+        position: absolute;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        border: 1px solid $grey;
+        cursor: pointer;
+    }
+    .checkmark-text {
+        padding-left: 25px;
+        font-size: 14px;
+    }
+    .checkbox-tick:after,
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+    input:checked~.checkmark:after,
+    input:checked~.checbox-tick:after {
+        display: block;
+    }
+    .checkmark:after {
+        width: 6px;
+        height: 9px;
+        border: solid $black;
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+        left: 5px;
+    }
+}
+
+.submit {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    background-color: $black;
+    color: $white;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 20px;
+    &:hover {
+        background-color: pink;
+    }
+}
